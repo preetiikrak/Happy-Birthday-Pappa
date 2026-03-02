@@ -1,19 +1,32 @@
+/* =========================
+   BODY – FIX TOP CROP ISSUE
+========================= */
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;          /* FIX: was center */
+    min-height: 100vh;                /* FIX: was height */
     background-color: #000000;
     margin: 0;
     font-family: sans-serif;
+    padding: 20px 10px 40px;           /* FIX: mobile spacing */
+    overflow-y: auto;                  /* FIX: allow scroll */
 }
 
+/* =========================
+   CONTAINER
+========================= */
 .rose-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 420px;
 }
 
+/* =========================
+   ROSE
+========================= */
 .rose {
     position: relative;
     width: 150px;
@@ -21,6 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;                 /* FIX: spacing from top */
 }
 
 .petal {
@@ -45,6 +59,9 @@ body {
     border-radius: 50%;
 }
 
+/* =========================
+   STEM & LEAVES
+========================= */
 .stem {
     width: 10px;
     height: 200px;
@@ -74,6 +91,10 @@ body {
 .leaf-2 {
     transform: rotate(-45deg) translateY(20px);
 }
+
+/* =========================
+   TEXT
+========================= */
 .tagline {
     margin-top: 30px;
     font-size: 40px;
@@ -82,11 +103,27 @@ body {
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
+
 .tagline1 {
-    margin-top: 0px;
+    margin-top: 10px;
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
     font-family: 'Arial', sans-serif;
+    line-height: 1.5;                 /* FIX: readability */
+    padding: 0 10px;                  /* FIX: mobile wrap */
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 480px) {
+    .tagline {
+        font-size: 26px;
+    }
+
+    .tagline1 {
+        font-size: 18px;
+    }
 }
