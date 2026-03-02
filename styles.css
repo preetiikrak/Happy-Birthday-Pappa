@@ -27,6 +27,7 @@ body {
 }
 
 /* 🌹 Rose (Scaled to FIT phones) */
+/* 🌹 Rose */
 .rose {
     position: relative;
     width: 110px;
@@ -40,25 +41,28 @@ body {
     height: 55px;
     background: radial-gradient(circle, red, darkred);
     border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;   /* 🔥 FIX */
 }
 
-.petal-1 { transform: rotate(0deg) translateX(35px); }
-.petal-2 { transform: rotate(60deg) translateX(35px); }
-.petal-3 { transform: rotate(120deg) translateX(35px); }
-.petal-4 { transform: rotate(180deg) translateX(35px); }
-.petal-5 { transform: rotate(240deg) translateX(35px); }
-.petal-6 { transform: rotate(300deg) translateX(35px); }
+.petal-1 { transform: translate(-50%, -50%) rotate(0deg) translateX(35px); }
+.petal-2 { transform: translate(-50%, -50%) rotate(60deg) translateX(35px); }
+.petal-3 { transform: translate(-50%, -50%) rotate(120deg) translateX(35px); }
+.petal-4 { transform: translate(-50%, -50%) rotate(180deg) translateX(35px); }
+.petal-5 { transform: translate(-50%, -50%) rotate(240deg) translateX(35px); }
+.petal-6 { transform: translate(-50%, -50%) rotate(300deg) translateX(35px); }
 
 .center {
+    position: absolute;
     width: 35px;
     height: 35px;
     background: radial-gradient(circle, black, darkred);
     border-radius: 50%;
-    position: absolute;
-    top: 38px;
-    left: 38px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 /* Stem & Leaves */
 .stem {
     width: 6px;
@@ -121,3 +125,4 @@ body {
         font-size: 20px;
     }
 }
+
