@@ -5,99 +5,96 @@
     box-sizing: border-box;
 }
 
-/* Body */
+/* Page layout — NORMAL FLOW */
 body {
     background-color: #000;
     font-family: sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px 10px;
+    color: white;
+}
+
+/* Page wrapper */
+.page {
+    padding-top: 40px;        /* SAFE TOP SPACE */
+    padding-bottom: 40px;
+    display: block;
 }
 
 /* Container */
 .rose-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* 🌹 Rose (Responsive Scaling) */
+/* 🌹 Rose (Scaled to FIT phones) */
 .rose {
     position: relative;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 10px;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 10px;
 }
 
 .petal {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background: radial-gradient(circle, red, darkred);
     border-radius: 50%;
 }
 
-.petal-1 { transform: rotate(0deg) translateX(40px); }
-.petal-2 { transform: rotate(60deg) translateX(40px); }
-.petal-3 { transform: rotate(120deg) translateX(40px); }
-.petal-4 { transform: rotate(180deg) translateX(40px); }
-.petal-5 { transform: rotate(240deg) translateX(40px); }
-.petal-6 { transform: rotate(300deg) translateX(40px); }
+.petal-1 { transform: rotate(0deg) translateX(35px); }
+.petal-2 { transform: rotate(60deg) translateX(35px); }
+.petal-3 { transform: rotate(120deg) translateX(35px); }
+.petal-4 { transform: rotate(180deg) translateX(35px); }
+.petal-5 { transform: rotate(240deg) translateX(35px); }
+.petal-6 { transform: rotate(300deg) translateX(35px); }
 
 .center {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background: radial-gradient(circle, black, darkred);
     border-radius: 50%;
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 38px;
+    left: 38px;
 }
 
 /* Stem & Leaves */
 .stem {
-    width: 8px;
-    height: 140px;
+    width: 6px;
+    height: 120px;
     background: #006400;
-    margin-top: -10px;
+    margin: -5px auto 0;
 }
 
 .leaves {
     display: flex;
     justify-content: space-between;
-    width: 80px;
-    margin-top: -35px;
+    width: 70px;
+    margin: -30px auto 0;
 }
 
 .leaf {
-    width: 40px;
-    height: 20px;
+    width: 35px;
+    height: 18px;
     background: #228b22;
     border-radius: 50%;
 }
 
-/* Text (Reduced for mobile) */
+/* Text — MOBILE-FIRST */
 .tagline {
     font-size: 22px;
-    font-weight: bold;
-    color: white;
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 20px;
 }
 
 .tagline1 {
     font-size: 14px;
-    color: white;
-    text-align: center;
     margin-top: 10px;
     line-height: 1.5;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
-/* Tablets & larger */
+/* Larger screens */
 @media (min-width: 600px) {
     .rose {
         width: 150px;
