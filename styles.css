@@ -1,20 +1,38 @@
 /* =========================
-   BODY – FIX TOP CROP ISSUE
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY – GUARANTEED MOBILE SAFE
 ========================= */
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start;          /* FIX: was center */
-    min-height: 100vh;                /* FIX: was height */
+    align-items: flex-start;
+    min-height: 100svh;                     /* Mobile-safe viewport */
     background-color: #000000;
-    margin: 0;
     font-family: sans-serif;
-    padding: 20px 10px 40px;           /* FIX: mobile spacing */
-    overflow-y: auto;                  /* FIX: allow scroll */
+    padding-top: 100px;                     /* 🔥 FORCE TOP SPACE */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+    overflow-y: auto;
+}
+
+/* iPhone notch & safe area support */
+@supports (padding: env(safe-area-inset-top)) {
+    body {
+        padding-top: calc(100px + env(safe-area-inset-top));
+    }
 }
 
 /* =========================
-   CONTAINER
+   MAIN CONTAINER
 ========================= */
 .rose-container {
     display: flex;
@@ -22,6 +40,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 420px;
+    margin-top: 40px;                       /* Extra insurance */
 }
 
 /* =========================
@@ -34,7 +53,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;                 /* FIX: spacing from top */
+    margin-bottom: 20px;
 }
 
 .petal {
@@ -101,18 +120,16 @@ body {
     font-weight: bold;
     color: #ffffff;
     text-align: center;
-    font-family: 'Arial', sans-serif;
 }
 
 .tagline1 {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.5;                 /* FIX: readability */
-    padding: 0 10px;                  /* FIX: mobile wrap */
+    line-height: 1.5;
+    padding: 0 10px;
 }
 
 /* =========================
