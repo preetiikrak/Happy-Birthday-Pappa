@@ -35,7 +35,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;                 /* FIX: spacing from top */
 }
 
 .petal {
@@ -46,12 +45,29 @@ body {
     border-radius: 50%;
 }
 
-.petal-1 { transform: rotate(0deg) translateX(50px); }
-.petal-2 { transform: rotate(60deg) translateX(50px); }
-.petal-3 { transform: rotate(120deg) translateX(50px); }
-.petal-4 { transform: rotate(180deg) translateX(50px); }
-.petal-5 { transform: rotate(240deg) translateX(50px); }
-.petal-6 { transform: rotate(300deg) translateX(50px); }
+.petal-1 {
+    transform: rotate(0deg) translateX(50px);
+}
+
+.petal-2 {
+    transform: rotate(60deg) translateX(50px);
+}
+
+.petal-3 {
+    transform: rotate(120deg) translateX(50px);
+}
+
+.petal-4 {
+    transform: rotate(180deg) translateX(50px);
+}
+
+.petal-5 {
+    transform: rotate(240deg) translateX(50px);
+}
+
+.petal-6 {
+    transform: rotate(300deg) translateX(50px);
+}
 
 .center {
     width: 50px;
@@ -122,5 +138,6 @@ body {
         font-size: 20px;
     }
 }
+
 
 
