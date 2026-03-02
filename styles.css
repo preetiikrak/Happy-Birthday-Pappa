@@ -1,33 +1,25 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Page layout — NORMAL FLOW */
 body {
-    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;          /* FIX: avoid vertical crop */
+    min-height: 100vh;                /* FIX: allow scroll */
+    background-color: #000000;
+    margin: 0;
     font-family: sans-serif;
-    color: white;
-}
-
-/* Page wrapper */
-.page {
-    padding-top: 40px;        /* SAFE TOP SPACE */
+    padding-top: 60px;                /* ✅ SPACE FOR FLOWER */
     padding-bottom: 40px;
-    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-y: auto;
 }
 
-/* Container */
 .rose-container {
-    max-width: 360px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 🌹 Rose (Scaled to FIT phones) */
-/* 🌹 Rose */
+/* 🌹 FLOWER — UNTOUCHED */
 .rose {
     position: relative;
     width: 150px;
@@ -45,29 +37,12 @@ body {
     border-radius: 50%;
 }
 
-.petal-1 {
-    transform: rotate(0deg) translateX(50px);
-}
-
-.petal-2 {
-    transform: rotate(60deg) translateX(50px);
-}
-
-.petal-3 {
-    transform: rotate(120deg) translateX(50px);
-}
-
-.petal-4 {
-    transform: rotate(180deg) translateX(50px);
-}
-
-.petal-5 {
-    transform: rotate(240deg) translateX(50px);
-}
-
-.petal-6 {
-    transform: rotate(300deg) translateX(50px);
-}
+.petal-1 { transform: rotate(0deg) translateX(50px); }
+.petal-2 { transform: rotate(60deg) translateX(50px); }
+.petal-3 { transform: rotate(120deg) translateX(50px); }
+.petal-4 { transform: rotate(180deg) translateX(50px); }
+.petal-5 { transform: rotate(240deg) translateX(50px); }
+.petal-6 { transform: rotate(300deg) translateX(50px); }
 
 .center {
     width: 50px;
@@ -78,66 +53,62 @@ body {
 
 /* Stem & Leaves */
 .stem {
-    width: 6px;
-    height: 120px;
-    background: #006400;
-    margin: -5px auto 0;
+    width: 10px;
+    height: 200px;
+    background-color: #006400;
+    margin-top: -20px;
+    border-radius: 5px;
 }
 
 .leaves {
     display: flex;
     justify-content: space-between;
-    width: 70px;
-    margin: -30px auto 0;
+    width: 100px;
+    margin-top: -50px;
 }
 
 .leaf {
-    width: 35px;
-    height: 18px;
-    background: #228b22;
+    width: 50px;
+    height: 25px;
+    background-color: #228b22;
     border-radius: 50%;
 }
 
-/* Text — MOBILE-FIRST */
+.leaf-1 {
+    transform: rotate(45deg) translateY(20px);
+}
+
+.leaf-2 {
+    transform: rotate(-45deg) translateY(20px);
+}
+
+/* Text */
 .tagline {
-    font-size: 22px;
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .tagline1 {
-    font-size: 14px;
     margin-top: 10px;
-    line-height: 1.5;
-    padding: 0 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding: 0 10px;                 /* ✅ prevent edge overflow */
 }
 
-/* Larger screens */
-@media (min-width: 600px) {
-    .rose {
-        width: 150px;
-        height: 150px;
-    }
-
-    .petal {
-        width: 80px;
-        height: 80px;
-    }
-
-    .center {
-        width: 50px;
-        height: 50px;
-        top: 50px;
-        left: 50px;
-    }
-
+/* 📱 Mobile font safety (NO flower change) */
+@media (max-width: 480px) {
     .tagline {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .tagline1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
-
-
-
